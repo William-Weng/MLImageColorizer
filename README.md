@@ -1,6 +1,8 @@
-# MLImageColorizer
-黑白圖片 => 彩色圖片
+# [MLImageColorizer](https://www.onswiftwings.com/posts/image-colorization-coreml/)
+[黑白圖片](https://github.com/sgl0v/ImageColorizer) => [彩色圖片](https://github.com/Vadbeg/colorization-coreml)
 
 ```
 coremlColorizer.mlpackage要去自己下載
 ```
+
+https://github.com/user-attachments/assets/45ce2172-d42a-4daa-9296-e7967d838cbb
