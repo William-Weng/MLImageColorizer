@@ -40,8 +40,10 @@
 		813B087E2E5D8A2600EF7552 /* sRGB_ICC_v4_Appearance.icc in Resources */ = {isa = PBXBuildFile; fileRef = 813B08542E5D8A2600EF7552 /* sRGB_ICC_v4_Appearance.icc */; };
 		813B087F2E5D8A2600EF7552 /* sRGB_v4_ICC_preference.icc in Resources */ = {isa = PBXBuildFile; fileRef = 813B08552E5D8A2600EF7552 /* sRGB_v4_ICC_preference.icc */; };
 		813B08802E5D8A2600EF7552 /* lcms2.def in Resources */ = {isa = PBXBuildFile; fileRef = 813B084F2E5D8A2600EF7552 /* lcms2.def */; };
-		8165C7BD2E5FFBF9005ADEF4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165C7BC2E5FFBF9005ADEF4 /* Model.swift */; };
-		816CD0932E614E3D0083B199 /* CoremlColorizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 816CD0922E614E3D0083B199 /* CoremlColorizer.mlmodel */; };
+		816CD0972E6150410083B199 /* CoremlColorizer.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 816CD0962E6150410083B199 /* CoremlColorizer.mlpackage */; };
+		816CD0992E6151360083B199 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CD0982E6151360083B199 /* Constant.swift */; };
+		816CD09B2E6151770083B199 /* LCM2Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CD09A2E6151770083B199 /* LCM2Utility.swift */; };
+		816CD09F2E6155AD0083B199 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CD09E2E6155AB0083B199 /* Model.swift */; };
 		817567FC2CA2C2B400B24577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817567FB2CA2C2B400B24577 /* AppDelegate.swift */; };
 		817568002CA2C2B400B24577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817567FF2CA2C2B400B24577 /* ViewController.swift */; };
 		817568032CA2C2B400B24577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817568012CA2C2B400B24577 /* Main.storyboard */; };
@@ -87,8 +89,10 @@
 		813B08542E5D8A2600EF7552 /* sRGB_ICC_v4_Appearance.icc */ = {isa = PBXFileReference; lastKnownFileType = file; path = sRGB_ICC_v4_Appearance.icc; sourceTree = "<group>"; };
 		813B08552E5D8A2600EF7552 /* sRGB_v4_ICC_preference.icc */ = {isa = PBXFileReference; lastKnownFileType = file; path = sRGB_v4_ICC_preference.icc; sourceTree = "<group>"; };
 		813B08582E5D8A2600EF7552 /* ImageColoriser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageColoriser-Bridging-Header.h"; sourceTree = "<group>"; };
-		8165C7BC2E5FFBF9005ADEF4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		816CD0922E614E3D0083B199 /* CoremlColorizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CoremlColorizer.mlmodel; sourceTree = "<group>"; };
+		816CD0962E6150410083B199 /* CoremlColorizer.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = CoremlColorizer.mlpackage; sourceTree = "<group>"; };
+		816CD0982E6151360083B199 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		816CD09A2E6151770083B199 /* LCM2Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCM2Utility.swift; sourceTree = "<group>"; };
+		816CD09E2E6155AB0083B199 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		817567F82CA2C2B400B24577 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		817567FB2CA2C2B400B24577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		817567FF2CA2C2B400B24577 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,13 +156,12 @@
 			path = littlecms;
 			sourceTree = "<group>";
 		};
-		813B085D2E5D8A2600EF7552 /* Utils */ = {
+		816CD09D2E6152560083B199 /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
 				813B08562E5D8A2600EF7552 /* littlecms */,
-				813B08582E5D8A2600EF7552 /* ImageColoriser-Bridging-Header.h */,
 			);
-			path = Utils;
+			path = Plugin;
 			sourceTree = "<group>";
 		};
 		817567EF2CA2C2B400B24577 = {
@@ -181,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				817568192CA2C36F00B24577 /* Setting */,
+				816CD09D2E6152560083B199 /* Plugin */,
 				817568182CA2C36400B24577 /* Material */,
 				817568112CA2C32700B24577 /* Utility */,
 				817568162CA2C33E00B24577 /* Storyboard */,
@@ -193,9 +197,11 @@
 		817568112CA2C32700B24577 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				816CD09A2E6151770083B199 /* LCM2Utility.swift */,
+				816CD09E2E6155AB0083B199 /* Model.swift */,
 				813B08302E5D88C600EF7552 /* ImageColorizer.swift */,
-				8165C7BC2E5FFBF9005ADEF4 /* Model.swift */,
 				81E0664E2E5DA49B003C4CC8 /* Extension.swift */,
+				816CD0982E6151360083B199 /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -212,7 +218,6 @@
 		817568172CA2C35000B24577 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				813B085D2E5D8A2600EF7552 /* Utils */,
 				817567FF2CA2C2B400B24577 /* ViewController.swift */,
 			);
 			path = ViewController;
@@ -222,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				81E0664C2E5DA307003C4CC8 /* Assets.xcassets */,
-				816CD0922E614E3D0083B199 /* CoremlColorizer.mlmodel */,
+				816CD0962E6150410083B199 /* CoremlColorizer.mlpackage */,
 			);
 			path = Material;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				817568092CA2C2B500B24577 /* Info.plist */,
+				813B08582E5D8A2600EF7552 /* ImageColoriser-Bridging-Header.h */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -323,11 +329,12 @@
 				813B085F2E5D8A2600EF7552 /* cmsio1.c in Sources */,
 				813B08602E5D8A2600EF7552 /* cmssm.c in Sources */,
 				813B08612E5D8A2600EF7552 /* cmslut.c in Sources */,
+				816CD0972E6150410083B199 /* CoremlColorizer.mlpackage in Sources */,
 				813B08622E5D8A2600EF7552 /* cmsxform.c in Sources */,
 				813B08632E5D8A2600EF7552 /* cmsnamed.c in Sources */,
 				813B08642E5D8A2600EF7552 /* cmsintrp.c in Sources */,
 				813B08652E5D8A2600EF7552 /* cmsps2.c in Sources */,
-				816CD0932E614E3D0083B199 /* CoremlColorizer.mlmodel in Sources */,
+				816CD09B2E6151770083B199 /* LCM2Utility.swift in Sources */,
 				813B08662E5D8A2600EF7552 /* cmsvirt.c in Sources */,
 				813B08672E5D8A2600EF7552 /* cmsgamma.c in Sources */,
 				813B08682E5D8A2600EF7552 /* cmsalpha.c in Sources */,
@@ -340,14 +347,15 @@
 				813B08702E5D8A2600EF7552 /* cmsopt.c in Sources */,
 				813B08722E5D8A2600EF7552 /* cmsmd5.c in Sources */,
 				813B08742E5D8A2600EF7552 /* cmsplugin.c in Sources */,
-				8165C7BD2E5FFBF9005ADEF4 /* Model.swift in Sources */,
 				813B08752E5D8A2600EF7552 /* cmspcs.c in Sources */,
 				813B08762E5D8A2600EF7552 /* cmstypes.c in Sources */,
 				813B08772E5D8A2600EF7552 /* cmsgmt.c in Sources */,
+				816CD09F2E6155AD0083B199 /* Model.swift in Sources */,
 				813B08792E5D8A2600EF7552 /* cmshalf.c in Sources */,
 				813B087A2E5D8A2600EF7552 /* cmssamp.c in Sources */,
 				813B087B2E5D8A2600EF7552 /* cmserr.c in Sources */,
 				81E0664F2E5DA49B003C4CC8 /* Extension.swift in Sources */,
+				816CD0992E6151360083B199 /* Constant.swift in Sources */,
 				817567FC2CA2C2B400B24577 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,7 +530,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Example/ViewController/Utils/ImageColoriser-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example/ImageColoriser-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -557,7 +565,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Example/ViewController/Utils/ImageColoriser-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example/ImageColoriser-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
