@@ -41,7 +41,7 @@
 		813B087F2E5D8A2600EF7552 /* sRGB_v4_ICC_preference.icc in Resources */ = {isa = PBXBuildFile; fileRef = 813B08552E5D8A2600EF7552 /* sRGB_v4_ICC_preference.icc */; };
 		813B08802E5D8A2600EF7552 /* lcms2.def in Resources */ = {isa = PBXBuildFile; fileRef = 813B084F2E5D8A2600EF7552 /* lcms2.def */; };
 		8165C7BD2E5FFBF9005ADEF4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165C7BC2E5FFBF9005ADEF4 /* Model.swift */; };
-		816CD08B2E6149670083B199 /* coremlColorizer.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 816CD08A2E6149670083B199 /* coremlColorizer.mlpackage */; };
+		816CD0932E614E3D0083B199 /* CoremlColorizer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 816CD0922E614E3D0083B199 /* CoremlColorizer.mlmodel */; };
 		817567FC2CA2C2B400B24577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817567FB2CA2C2B400B24577 /* AppDelegate.swift */; };
 		817568002CA2C2B400B24577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817567FF2CA2C2B400B24577 /* ViewController.swift */; };
 		817568032CA2C2B400B24577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817568012CA2C2B400B24577 /* Main.storyboard */; };
@@ -88,7 +88,7 @@
 		813B08552E5D8A2600EF7552 /* sRGB_v4_ICC_preference.icc */ = {isa = PBXFileReference; lastKnownFileType = file; path = sRGB_v4_ICC_preference.icc; sourceTree = "<group>"; };
 		813B08582E5D8A2600EF7552 /* ImageColoriser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageColoriser-Bridging-Header.h"; sourceTree = "<group>"; };
 		8165C7BC2E5FFBF9005ADEF4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		816CD08A2E6149670083B199 /* coremlColorizer.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = coremlColorizer.mlpackage; sourceTree = "<group>"; };
+		816CD0922E614E3D0083B199 /* CoremlColorizer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CoremlColorizer.mlmodel; sourceTree = "<group>"; };
 		817567F82CA2C2B400B24577 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		817567FB2CA2C2B400B24577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		817567FF2CA2C2B400B24577 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -221,8 +221,8 @@
 		817568182CA2C36400B24577 /* Material */ = {
 			isa = PBXGroup;
 			children = (
-				816CD08A2E6149670083B199 /* coremlColorizer.mlpackage */,
 				81E0664C2E5DA307003C4CC8 /* Assets.xcassets */,
+				816CD0922E614E3D0083B199 /* CoremlColorizer.mlmodel */,
 			);
 			path = Material;
 			sourceTree = "<group>";
@@ -324,10 +324,10 @@
 				813B08602E5D8A2600EF7552 /* cmssm.c in Sources */,
 				813B08612E5D8A2600EF7552 /* cmslut.c in Sources */,
 				813B08622E5D8A2600EF7552 /* cmsxform.c in Sources */,
-				816CD08B2E6149670083B199 /* coremlColorizer.mlpackage in Sources */,
 				813B08632E5D8A2600EF7552 /* cmsnamed.c in Sources */,
 				813B08642E5D8A2600EF7552 /* cmsintrp.c in Sources */,
 				813B08652E5D8A2600EF7552 /* cmsps2.c in Sources */,
+				816CD0932E614E3D0083B199 /* CoremlColorizer.mlmodel in Sources */,
 				813B08662E5D8A2600EF7552 /* cmsvirt.c in Sources */,
 				813B08672E5D8A2600EF7552 /* cmsgamma.c in Sources */,
 				813B08682E5D8A2600EF7552 /* cmsalpha.c in Sources */,

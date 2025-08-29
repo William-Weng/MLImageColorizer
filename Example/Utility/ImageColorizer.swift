@@ -43,7 +43,7 @@ private extension ImageColorizer {
         do {
             let inputImageLab = try preProcess(inputImage: inputImage)
             let input = try coloriserInput(from: inputImageLab)
-            let output = try coremlColorizer(configuration: MLModelConfiguration()).prediction(input: input)
+            let output = try CoremlColorizer(configuration: MLModelConfiguration()).prediction(input: input)
             let outputImageLab = imageLab(from: output, inputImageLab: inputImageLab)
             let resultImage = try postProcess(inputImage: inputImage, outputLAB: outputImageLab)
             return .success(resultImage)
@@ -58,7 +58,7 @@ private extension ImageColorizer {
     /// 將 Lab 色彩空間數據轉換為 Core ML 模型輸入格式 (由亮度l => 預測出a和b通道)
     /// - Parameter imageLab: Lab 色彩空間的圖像數據
     /// - Returns: Core ML 模型的輸入數據
-    func coloriserInput(from imageLab: LabValues) throws -> coremlColorizerInput {
+    func coloriserInput(from imageLab: LabValues) throws -> CoremlColorizerInput {
         
         // 創建一個 MLMultiArray 來儲存模型的輸入數據
         let inputArray = try MLMultiArray(shape: Constants.coremlInputShape, dataType: MLMultiArrayDataType.float32)
@@ -70,7 +70,7 @@ private extension ImageColorizer {
         })
         
         // 返回包含輸入數據的 coremlColorizerInput 物件
-        return coremlColorizerInput(input1: inputArray)
+        return CoremlColorizerInput(input1: inputArray)
     }
 
     /// 從 Core ML 模型輸出中提取 a 和 b 色彩通道，並與原始 L 通道結合 (原始圖片亮度 + 預測出的顏色值)
@@ -78,7 +78,7 @@ private extension ImageColorizer {
     ///   - colorizerOutput: Core ML 模型的輸出
     ///   - inputImageLab: 包含原始 L 通道的 Lab 數據
     /// - Returns: 包含 L、a、b 三個通道的完整 Lab 數據
-    func imageLab(from colorizerOutput: coremlColorizerOutput, inputImageLab: LabValues) -> LabValues {
+    func imageLab(from colorizerOutput: CoremlColorizerOutput, inputImageLab: LabValues) -> LabValues {
         
         var a = [Float]()
         var b = [Float]()
